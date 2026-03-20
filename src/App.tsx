@@ -90,34 +90,19 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
 };
 
 export default function App() {
-  return (
-    <div className="min-h-screen font-sans bg-white selection:bg-[#4db380]/20">
-      {/* Navigation */}
-      <nav className="relative z-10 border-b border-[#174532]/5 bg-white/90 backdrop-blur-md sticky top-0">
-        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#174532] flex items-center justify-center font-display font-bold text-[#f4b925] text-xl shadow-md">FG</div>
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-xl tracking-tight text-[#174532] leading-none">Perspectiva</span>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-[#4db380] font-bold mt-1">Editorial Digital</span>
-            </div>
-          </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-[#174532]/60">
-            <a href="#philosophy" className="hover:text-[#174532] transition-colors">Filosofía</a>
-            <a href="#commissions" className="hover:text-[#174532] transition-colors">Comisiones</a>
-            <a href="#architecture" className="hover:text-[#174532] transition-colors">Arquitectura</a>
-          </div>
-          <a 
-            href="#join" 
-            className="bg-[#174532] text-[#f4b925] px-8 py-3 font-bold text-xs uppercase tracking-widest hover:bg-[#1f513a] transition-all shadow-lg"
-          >
-            Unirse ahora
-          </a>
-        </div>
-      </nav>
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', `#${id}`);
+    }
+  };
 
+  return (
+    <div className="min-h-screen font-sans bg-white selection:bg-[#4db380]/20 pt-24">
       {/* Hero Section */}
-      <header className="relative z-10 pt-32 pb-40 px-6 bg-[#dae7df]/20">
+      <header className="relative pt-32 pb-40 px-6 bg-[#dae7df]/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <motion.div
@@ -135,10 +120,18 @@ export default function App() {
                 No necesitamos más afiliados. Necesitamos personas que entiendan que FG Perspectiva no es una tienda. Es una arquitectura.
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
-                <a href="#join" className="bg-[#174532] text-[#f4b925] px-12 py-6 font-bold text-sm flex items-center justify-center gap-4 hover:bg-[#1f513a] transition-all group uppercase tracking-[0.2em] shadow-2xl">
+                <a 
+                  href="#join" 
+                  onClick={(e) => scrollToSection(e, 'join')}
+                  className="bg-[#174532] text-[#f4b925] px-12 py-6 font-bold text-sm flex items-center justify-center gap-4 hover:bg-[#1f513a] transition-all group uppercase tracking-[0.2em] shadow-2xl"
+                >
                   Unirse al Programa <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a href="#how-it-works" className="border-2 border-[#174532] text-[#174532] px-12 py-6 font-bold text-sm flex items-center justify-center gap-4 hover:bg-[#174532] hover:text-white transition-all uppercase tracking-[0.2em]">
+                <a 
+                  href="#architecture" 
+                  onClick={(e) => scrollToSection(e, 'architecture')}
+                  className="border-2 border-[#174532] text-[#174532] px-12 py-6 font-bold text-sm flex items-center justify-center gap-4 hover:bg-[#174532] hover:text-white transition-all uppercase tracking-[0.2em]"
+                >
                   Ver arquitectura
                 </a>
               </div>
@@ -160,7 +153,7 @@ export default function App() {
       </header>
 
       {/* Philosophy Section */}
-      <section className="relative z-10 py-32 px-6" id="philosophy">
+      <section className="relative py-32 px-6 scroll-mt-24" id="philosophy">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-24 items-start">
             <div>
@@ -206,7 +199,7 @@ export default function App() {
       </section>
 
       {/* Commissions Section */}
-      <section className="relative z-10 py-32 px-6 bg-[#174532]" id="commissions">
+      <section className="relative py-32 px-6 bg-[#174532] scroll-mt-24" id="commissions">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight leading-tight">
@@ -256,7 +249,7 @@ export default function App() {
       </section>
 
       {/* Architecture Section */}
-      <section className="relative z-10 py-32 px-6" id="architecture">
+      <section className="relative py-32 px-6 scroll-mt-24" id="architecture">
         <div className="max-w-7xl mx-auto">
           <SectionTitle subtitle="Cada ruta responde a una fase dentro de la construcción de activos digitales.">
             📚 La Arquitectura de la Biblioteca
@@ -302,7 +295,7 @@ export default function App() {
       </section>
 
       {/* Strategy Section */}
-      <section className="relative z-10 py-32 px-6 bg-[#dae7df]/30">
+      <section className="relative py-32 px-6 bg-[#dae7df]/30">
         <div className="max-w-7xl mx-auto">
           <SectionTitle subtitle="No necesitas volumen. Necesitas dirección estratégica.">
             🎯 Estrategia de Afiliación
@@ -326,7 +319,7 @@ export default function App() {
       </section>
 
       {/* How to Start */}
-      <section className="relative z-10 py-32 px-6" id="join">
+      <section className="relative py-32 px-6 scroll-mt-24" id="join">
         <div className="max-w-5xl mx-auto text-center">
           <SectionTitle>🚀 Cómo empezar</SectionTitle>
           <div className="grid md:grid-cols-2 gap-8 text-left mb-20">
@@ -349,7 +342,7 @@ export default function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative z-10 py-32 px-6 border-t border-[#174532]/5">
+      <section className="relative py-32 px-6 border-t border-[#174532]/5">
         <div className="max-w-4xl mx-auto">
           <SectionTitle>❓ Preguntas frecuentes</SectionTitle>
           <div className="space-y-2">
@@ -378,7 +371,7 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="relative z-10 pt-40 pb-20 px-6 bg-[#174532]">
+      <footer className="relative pt-40 pb-20 px-6 bg-[#174532]">
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex items-center justify-center gap-4 mb-12">
             <div className="w-14 h-14 bg-white flex items-center justify-center font-display font-bold text-[#174532] text-2xl shadow-2xl">FG</div>
@@ -401,6 +394,49 @@ export default function App() {
           </p>
         </div>
       </footer>
+
+      {/* Navigation - Placed at the end for absolute stacking priority */}
+      <nav className="fixed top-0 left-0 right-0 z-[100] border-b border-[#174532]/5 bg-white/95 backdrop-blur-md">
+        <div className="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 bg-[#174532] flex items-center justify-center font-display font-bold text-[#f4b925] text-xl shadow-md">FG</div>
+            <div className="flex flex-col">
+              <span className="font-display font-bold text-xl tracking-tight text-[#174532] leading-none">Perspectiva</span>
+              <span className="text-[10px] uppercase tracking-[0.3em] text-[#4db380] font-bold mt-1">Editorial Digital</span>
+            </div>
+          </div>
+          <div className="hidden md:flex items-center gap-8 text-sm font-bold uppercase tracking-widest text-[#174532]/60">
+            <a 
+              href="#philosophy" 
+              onClick={(e) => scrollToSection(e, 'philosophy')}
+              className="hover:text-[#174532] transition-colors cursor-pointer py-2"
+            >
+              Filosofía
+            </a>
+            <a 
+              href="#commissions" 
+              onClick={(e) => scrollToSection(e, 'commissions')}
+              className="hover:text-[#174532] transition-colors cursor-pointer py-2"
+            >
+              Comisiones
+            </a>
+            <a 
+              href="#architecture" 
+              onClick={(e) => scrollToSection(e, 'architecture')}
+              className="hover:text-[#174532] transition-colors cursor-pointer py-2"
+            >
+              Arquitectura
+            </a>
+          </div>
+          <a 
+            href="#join" 
+            onClick={(e) => scrollToSection(e, 'join')}
+            className="bg-[#174532] text-[#f4b925] px-8 py-3 font-bold text-xs uppercase tracking-widest hover:bg-[#1f513a] transition-all shadow-lg cursor-pointer"
+          >
+            Unirse ahora
+          </a>
+        </div>
+      </nav>
     </div>
   );
 }
