@@ -105,10 +105,10 @@ export default function App() {
       <header className="relative pt-16 pb-40 px-6 bg-[#dae7df]/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
-              className="lg:col-span-8"
+              className="lg:col-span-12"
             >
               <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#174532] text-[#f4b925] text-[10px] font-bold uppercase tracking-[0.3em] mb-10 shadow-xl">
                 <Zap className="w-3 h-3" /> Programa de Afiliados
@@ -116,8 +116,11 @@ export default function App() {
               <h1 className="text-4xl md:text-6xl font-display font-bold text-[#174532] leading-[0.95] mb-10 tracking-tighter">
                 Diseña ingresos recomendando <span className="italic text-[#4db380]">sistemas</span>, no productos.
               </h1>
-              <p className="text-xl md:text-2xl text-[#1b1b1b]/70 mb-12 leading-relaxed max-w-2xl font-serif">
+              <p className="text-xl md:text-2xl text-[#1b1b1b]/70 mb-6 leading-relaxed max-w-3xl font-serif">
                 No necesitamos más afiliados. Necesitamos personas que entiendan que FG Perspectiva no es una tienda. Es una arquitectura.
+              </p>
+              <p className="text-lg md:text-xl text-[#174532] mb-12 font-serif italic border-l-4 border-[#f4b925] pl-6 py-2 max-w-2xl">
+                "No se trata de vender libros. Se trata de ayudar a otros a construir activos digitales reales."
               </p>
               <div className="flex flex-col sm:flex-row gap-6">
                 <a 
@@ -136,18 +139,6 @@ export default function App() {
                 </a>
               </div>
             </motion.div>
-            <div className="lg:col-span-4 hidden lg:block">
-              <div className="relative">
-                <div className="absolute -inset-4 border-2 border-[#f4b925] translate-x-8 translate-y-8" />
-                <div className="relative bg-[#174532] p-12 aspect-[3/4] flex flex-col justify-end shadow-2xl">
-                  <div className="text-[#f4b925] font-display text-6xl font-bold mb-4">FG</div>
-                  <div className="h-1 w-20 bg-[#f4b925] mb-8" />
-                  <p className="text-white/60 font-serif italic text-lg leading-relaxed">
-                    "No se trata de vender libros. Se trata de ayudar a otros a construir activos digitales reales."
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </header>
