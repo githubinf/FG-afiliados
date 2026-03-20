@@ -102,9 +102,9 @@ export default function App() {
   return (
     <div className="min-h-screen font-sans bg-white selection:bg-[#4db380]/20 pt-20">
       {/* Hero Section */}
-      <header className="relative pt-20 pb-24 px-6 bg-[#dae7df]/20 overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="max-w-3xl">
+      <header className="relative pt-20 pb-24 px-8 md:px-12 bg-[#dae7df]/20 overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="max-w-2xl">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -146,8 +146,8 @@ export default function App() {
       </header>
 
       {/* Philosophy Section */}
-      <section className="relative py-20 px-6 scroll-mt-24" id="philosophy">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-8 md:px-12 scroll-mt-24" id="philosophy">
+        <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <SectionTitle subtitle="La mayoría de los programas fallan porque se enfocan en el producto. Nosotros nos enfocamos en el sistema.">
@@ -192,8 +192,8 @@ export default function App() {
       </section>
 
       {/* Commissions Section */}
-      <section className="relative py-20 px-6 bg-[#174532] scroll-mt-24" id="commissions">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-8 md:px-12 bg-[#174532] scroll-mt-24" id="commissions">
+        <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 tracking-tight leading-tight">
               💸 Modelo de comisiones
@@ -242,8 +242,8 @@ export default function App() {
       </section>
 
       {/* Architecture Section */}
-      <section className="relative py-20 px-6 scroll-mt-24" id="architecture">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-8 md:px-12 scroll-mt-24" id="architecture">
+        <div className="max-w-6xl mx-auto">
           <SectionTitle subtitle="Cada ruta responde a una fase dentro de la construcción de activos digitales.">
             📚 La Arquitectura de la Biblioteca
           </SectionTitle>
@@ -288,8 +288,8 @@ export default function App() {
       </section>
 
       {/* Strategy Section */}
-      <section className="relative py-20 px-6 bg-[#dae7df]/30">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-8 md:px-12 bg-[#dae7df]/30">
+        <div className="max-w-6xl mx-auto">
           <SectionTitle subtitle="No necesitas volumen. Necesitas dirección estratégica.">
             🎯 Estrategia de Afiliación
           </SectionTitle>
@@ -312,8 +312,8 @@ export default function App() {
       </section>
 
       {/* How to Start */}
-      <section className="relative py-20 px-6 scroll-mt-24" id="join">
-        <div className="max-w-5xl mx-auto text-center">
+      <section className="relative py-20 px-8 md:px-12 scroll-mt-24" id="join">
+        <div className="max-w-4xl mx-auto text-center">
           <SectionTitle>🚀 Cómo empezar</SectionTitle>
           <div className="grid md:grid-cols-2 gap-8 text-left mb-16">
             {[
@@ -335,8 +335,8 @@ export default function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-20 px-6 border-t border-[#174532]/5">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative py-20 px-8 md:px-12 border-t border-[#174532]/5">
+        <div className="max-w-3xl mx-auto">
           <SectionTitle>❓ Preguntas frecuentes</SectionTitle>
           <div className="space-y-2">
             <FAQItem 
@@ -364,8 +364,8 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="relative py-16 px-6 bg-[#174532]">
-        <div className="max-w-7xl mx-auto">
+      <footer className="relative py-16 px-8 md:px-12 bg-[#174532]">
+        <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 text-left">
             <div className="lg:col-span-2">
               <div className="flex items-center gap-3 mb-6">
@@ -405,7 +405,7 @@ export default function App() {
 
       {/* Navigation - Placed at the end for absolute stacking priority */}
       <nav className="fixed top-0 left-0 right-0 z-[100] border-b border-[#174532]/5 bg-white/95 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-6xl mx-auto px-8 md:px-12 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-9 h-9 bg-[#174532] flex items-center justify-center font-display font-bold text-[#f4b925] text-lg shadow-sm">FG</div>
             <div className="flex flex-col">
