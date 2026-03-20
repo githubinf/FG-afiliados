@@ -102,7 +102,7 @@ export default function App() {
   return (
     <div className="min-h-screen font-sans bg-white selection:bg-[#4db380]/20 pt-24">
       {/* Hero Section */}
-      <header className="relative pt-32 pb-40 px-6 bg-[#dae7df]/20">
+      <header className="relative pt-16 pb-40 px-6 bg-[#dae7df]/20">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <motion.div
@@ -113,7 +113,7 @@ export default function App() {
               <div className="inline-flex items-center gap-3 px-4 py-2 bg-[#174532] text-[#f4b925] text-[10px] font-bold uppercase tracking-[0.3em] mb-10 shadow-xl">
                 <Zap className="w-3 h-3" /> Programa de Afiliados
               </div>
-              <h1 className="text-6xl md:text-8xl font-display font-bold text-[#174532] leading-[0.95] mb-10 tracking-tighter">
+              <h1 className="text-4xl md:text-6xl font-display font-bold text-[#174532] leading-[0.95] mb-10 tracking-tighter">
                 Diseña ingresos recomendando <span className="italic text-[#4db380]">sistemas</span>, no productos.
               </h1>
               <p className="text-xl md:text-2xl text-[#1b1b1b]/70 mb-12 leading-relaxed max-w-2xl font-serif">
@@ -153,7 +153,7 @@ export default function App() {
       </header>
 
       {/* Philosophy Section */}
-      <section className="relative py-32 px-6 scroll-mt-24" id="philosophy">
+      <section className="relative pt-16 pb-32 px-6 scroll-mt-24" id="philosophy">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-24 items-start">
             <div>
@@ -199,7 +199,7 @@ export default function App() {
       </section>
 
       {/* Commissions Section */}
-      <section className="relative py-32 px-6 bg-[#174532] scroll-mt-24" id="commissions">
+      <section className="relative pt-16 pb-32 px-6 bg-[#174532] scroll-mt-24" id="commissions">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6 tracking-tight leading-tight">
@@ -249,7 +249,7 @@ export default function App() {
       </section>
 
       {/* Architecture Section */}
-      <section className="relative py-32 px-6 scroll-mt-24" id="architecture">
+      <section className="relative pt-16 pb-32 px-6 scroll-mt-24" id="architecture">
         <div className="max-w-7xl mx-auto">
           <SectionTitle subtitle="Cada ruta responde a una fase dentro de la construcción de activos digitales.">
             📚 La Arquitectura de la Biblioteca
@@ -295,7 +295,7 @@ export default function App() {
       </section>
 
       {/* Strategy Section */}
-      <section className="relative py-32 px-6 bg-[#dae7df]/30">
+      <section className="relative pt-16 pb-32 px-6 bg-[#dae7df]/30">
         <div className="max-w-7xl mx-auto">
           <SectionTitle subtitle="No necesitas volumen. Necesitas dirección estratégica.">
             🎯 Estrategia de Afiliación
@@ -319,7 +319,7 @@ export default function App() {
       </section>
 
       {/* How to Start */}
-      <section className="relative py-32 px-6 scroll-mt-24" id="join">
+      <section className="relative pt-16 pb-32 px-6 scroll-mt-24" id="join">
         <div className="max-w-5xl mx-auto text-center">
           <SectionTitle>🚀 Cómo empezar</SectionTitle>
           <div className="grid md:grid-cols-2 gap-8 text-left mb-20">
@@ -342,7 +342,7 @@ export default function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-32 px-6 border-t border-[#174532]/5">
+      <section className="relative pt-16 pb-32 px-6 border-t border-[#174532]/5">
         <div className="max-w-4xl mx-auto">
           <SectionTitle>❓ Preguntas frecuentes</SectionTitle>
           <div className="space-y-2">
@@ -372,26 +372,41 @@ export default function App() {
 
       {/* Footer */}
       <footer className="relative pt-40 pb-20 px-6 bg-[#174532]">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <div className="w-14 h-14 bg-white flex items-center justify-center font-display font-bold text-[#174532] text-2xl shadow-2xl">FG</div>
-            <div className="flex flex-col text-left">
-              <span className="font-display font-bold text-3xl tracking-tight text-white leading-none">Perspectiva</span>
-              <span className="text-xs uppercase tracking-[0.4em] text-[#4db380] font-bold mt-2">Editorial Digital</span>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24 text-left">
+            <div className="lg:col-span-2">
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-12 h-12 bg-white flex items-center justify-center font-display font-bold text-[#174532] text-xl shadow-2xl">FG</div>
+                <div className="flex flex-col">
+                  <span className="font-display font-bold text-2xl tracking-tight text-white leading-none">Perspectiva</span>
+                  <span className="text-[10px] uppercase tracking-[0.3em] text-[#4db380] font-bold mt-1">Editorial Digital</span>
+                </div>
+              </div>
+              <p className="text-white/60 leading-relaxed max-w-md">
+                Editorial digital moderna dedicada a la creación de sistemas y transformación real. 
+                Construimos puentes entre la idea y el activo digital.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-white font-bold uppercase tracking-[0.3em] text-xs mb-8">Navegación</h4>
+              <ul className="space-y-4 text-sm text-[#4db380] font-bold uppercase tracking-widest">
+                <li><a href="#" className="hover:text-white transition-colors">Biblioteca</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Sistemas</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Sobre nosotros</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+              </ul>
             </div>
           </div>
-          <p className="text-3xl md:text-5xl font-display font-light text-white/40 max-w-5xl mx-auto mb-20 leading-relaxed italic text-balance">
-            "Sistemas que transforman conocimiento en activos."
-          </p>
-          <div className="flex flex-wrap justify-center gap-12 text-xs text-[#4db380] uppercase tracking-[0.5em] font-bold mb-20">
-            <a href="#" className="hover:text-white transition-colors">Términos</a>
-            <a href="#" className="hover:text-white transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-white transition-colors">Soporte</a>
-            <a href="#" className="hover:text-white transition-colors">ClickBank</a>
+
+          <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+            <p className="text-white/40 text-sm font-display italic">
+              "Sistemas que transforman realidades."
+            </p>
+            <p className="text-white/20 text-[10px] uppercase tracking-[0.6em]">
+              © 2026 FG Perspectiva.
+            </p>
           </div>
-          <p className="text-white/20 text-[10px] uppercase tracking-[0.6em]">
-            © {new Date().getFullYear()} FG Perspectiva. Todos los derechos reservados.
-          </p>
         </div>
       </footer>
 
