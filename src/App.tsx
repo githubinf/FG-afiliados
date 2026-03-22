@@ -17,7 +17,9 @@ import {
   Share2, 
   Brain,
   ExternalLink,
-  MessageSquare
+  MessageSquare,
+  Info,
+  Lightbulb
 } from "lucide-react";
 import React, { useState } from "react";
 
@@ -88,6 +90,49 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
     </div>
   );
 };
+
+const ProductTable = ({ title, description, products, showRole = false }: { title: string, description?: string, products: { name: string, commission: string, role?: string, buttonText?: string, customLink?: string }[], showRole?: boolean }) => (
+  <div className="mb-16">
+    <div className="flex items-center gap-3 mb-4">
+      <h3 className="text-xl md:text-2xl font-display font-bold text-[#f4b925]">{title}</h3>
+    </div>
+    {description && <p className="text-white/70 mb-8 font-serif italic text-base leading-relaxed max-w-3xl">{description}</p>}
+    <div className="overflow-x-auto">
+      <table className="w-full text-left border-collapse bg-white/5 backdrop-blur-sm rounded-lg overflow-hidden border border-white/10">
+        <thead>
+          <tr className="bg-white/10 text-[#f4b925]">
+            <th className="p-4 font-display font-bold uppercase tracking-wider text-xs">Producto</th>
+            <th className="p-4 font-display font-bold uppercase tracking-wider text-xs">Comisión</th>
+            <th className="p-4 font-display font-bold uppercase tracking-wider text-xs text-center">Enlace de Afiliado (ClickBank)</th>
+            {showRole && <th className="p-4 font-display font-bold uppercase tracking-wider text-xs">Rol en la Arquitectura</th>}
+          </tr>
+        </thead>
+        <tbody className="text-white/80">
+          {products.map((p, i) => (
+            <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
+              <td className="p-4 text-sm font-bold">{p.name}</td>
+              <td className="p-4 text-[#f4b925] font-bold text-sm">{p.commission}</td>
+              <td className="p-4 text-center">
+                {p.customLink ? (
+                  <div className="flex flex-col items-center">
+                    <div className="bg-white/10 p-2 rounded text-sm text-white/50 break-all font-mono border border-white/5 select-all max-w-[300px] mx-auto">
+                      {p.customLink}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="inline-flex items-center gap-2 bg-[#f4b925] text-[#174532] px-4 py-2 rounded font-bold text-[10px] uppercase tracking-widest shadow-md">
+                    🔗 {p.buttonText || "PRÓXIMAMENTE"}
+                  </div>
+                )}
+              </td>
+              {showRole && <td className="p-4 text-xs italic opacity-80 leading-relaxed">{p.role}</td>}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+);
 
 export default function App() {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -199,59 +244,141 @@ export default function App() {
             <div className="w-16 h-1 bg-[#f4b925] mt-6" />
           </div>
           
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse bg-white/5 backdrop-blur-sm rounded-lg overflow-hidden">
-              <thead>
-                <tr className="bg-[#f4b925] text-[#174532]">
-                  <th className="p-4 font-display font-bold uppercase tracking-wider text-sm">Producto / Ruta</th>
-                  <th className="p-4 font-display font-bold uppercase tracking-wider text-sm">Comisión</th>
-                  <th className="p-4 font-display font-bold uppercase tracking-wider text-sm">Rol en la Arquitectura</th>
-                  <th className="p-4 font-display font-bold uppercase tracking-wider text-sm text-center">Enlace de Afiliado</th>
-                </tr>
-              </thead>
-              <tbody className="text-white/80">
-                <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                  <td className="p-4 font-bold">Eje Central: Experto en PLR Premium</td>
-                  <td className="p-4 text-[#f4b925] font-bold">75%</td>
-                  <td className="p-4 text-sm italic">El Sistema Final. Punto de convergencia de toda la arquitectura.</td>
-                  <td className="p-4 text-center">
-                    <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#f4b925] text-[#174532] px-4 py-2 rounded font-bold text-xs uppercase tracking-widest hover:bg-white transition-all">
-                      Obtener Enlace <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </td>
-                </tr>
-                <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                  <td className="p-4">Ruta Fundamentos: Cómo crear un Blog optimizado</td>
-                  <td className="p-4 text-[#f4b925] font-bold">50%</td>
-                  <td className="p-4 text-sm italic">La entrada al sistema para quien empieza desde cero.</td>
-                  <td className="p-4 text-center">
-                    <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded font-bold text-xs uppercase tracking-widest hover:bg-[#f4b925] hover:text-[#174532] transition-all">
-                      Obtener Enlace <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </td>
-                </tr>
-                <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                  <td className="p-4">Ruta Monetización: Dominando el marketing de afiliados</td>
-                  <td className="p-4 text-[#f4b925] font-bold">50%</td>
-                  <td className="p-4 text-sm italic">Activa el flujo de ingresos dentro del sistema.</td>
-                  <td className="p-4 text-center">
-                    <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded font-bold text-xs uppercase tracking-widest hover:bg-[#f4b925] hover:text-[#174532] transition-all">
-                      Obtener Enlace <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </td>
-                </tr>
-                <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
-                  <td className="p-4">Ruta Tecnología: Cómo ganar dinero con CHATGPT</td>
-                  <td className="p-4 text-[#f4b925] font-bold">50%</td>
-                  <td className="p-4 text-sm italic">Acelera la creación y automatización del sistema.</td>
-                  <td className="p-4 text-center">
-                    <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded font-bold text-xs uppercase tracking-widest hover:bg-[#f4b925] hover:text-[#174532] transition-all">
-                      Obtener Enlace <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <ProductTable 
+            title="🎯 Eje Central del Ecosistema"
+            showRole={true}
+            products={[
+              { 
+                name: "Experto en PLR Premium", 
+                commission: "75%", 
+                role: "El Sistema Final. Punto de convergencia de toda la arquitectura. El producto que integra todo el conocimiento en un sistema completo.",
+                buttonText: "PRÓXIMAMENTE"
+              }
+            ]}
+          />
+
+          <ProductTable 
+            title="📚 Ruta Fundamentos Digitales (Iniciación)"
+            description="Para quienes quieren construir su primer activo online con bases sólidas."
+            products={[
+              { 
+                name: "Cómo crear un Blog optimizado", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp3"
+              },
+              { 
+                name: "Mi Blog y los Programas de Afiliados", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp6"
+              },
+              { 
+                name: "Guía Completa de Inbound Marketing", 
+                commission: "50%",
+                buttonText: "PRÓXIMAMENTE"
+              }
+            ]}
+          />
+
+          <ProductTable 
+            title="💰 Ruta Monetización y Afiliación (Ingresos)"
+            description="Estrategias prácticas para transformar tráfico e ideas en ingresos reales."
+            products={[
+              { 
+                name: "Dominando el marketing de afiliados", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp5"
+              },
+              { 
+                name: "Marketing CPA Para Emprendedores y Profesionales Digitales", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp2"
+              },
+              { 
+                name: "Cpa Marketing Fórmula Smartlink", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp8"
+              },
+              { 
+                name: "Dinero con Clickbank en minutos", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp4"
+              },
+              { 
+                name: "Tips de Marketing para Afiliados", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp7"
+              }
+            ]}
+          />
+
+          <ProductTable 
+            title="🤖 Ruta Inteligencia Artificial Aplicada (Tecnología)"
+            description="Cómo integrar IA en tus procesos digitales para crear más rápido y escalar."
+            products={[
+              { name: "Cómo ganar dinero con CHATGPT", commission: "50%" },
+              { name: "Desbloquea tu inspiración con ChatGPT", commission: "50%" },
+              { name: "Inteligencia Artificial", commission: "50%" },
+              { 
+                name: "El futuro del marketing (IA)", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp9"
+              }
+            ]}
+          />
+
+          <ProductTable 
+            title="🚀 Ruta Tráfico, Contenidos y Crecimiento (Crecimiento)"
+            description="Métodos probados para atraer visitantes cualificados y convertir contenido en crecimiento constante."
+            products={[
+              { name: "Ideas y consejos de Tráfico Web", commission: "50%" },
+              { name: "Ideas Maestras de Tráfico Web", commission: "50%" },
+              { name: "El Poder Del Marketing De Contenidos", commission: "50%" },
+              { name: "Dominando el Arte del Email Marketing", commission: "50%" }
+            ]}
+          />
+
+          <ProductTable 
+            title="🧠 Ruta Mentalidad y Creación (Mindset)"
+            description="Desarrollo personal, enfoque creativo y mentalidad estratégica para sostener cualquier proyecto digital."
+            products={[
+              { 
+                name: "El Vendedor hipnótico", 
+                commission: "50%",
+                customLink: "https://fcofrancis.pay.clickbank.net/?cbitems=10"
+              },
+              { name: "El arte de atraer la abundancia", commission: "50%" },
+              { name: "De la Pluma al Dinero", commission: "50%" },
+              { name: "Cómo crear Ebooks (de no ficción)", commission: "50%" },
+              { name: "Ebook en 24 horas", commission: "50%" }
+            ]}
+          />
+
+          {/* Note and Strategy */}
+          <div className="grid md:grid-cols-2 gap-8 mt-16">
+            <div className="bg-white/5 backdrop-blur-sm p-8 border-l-4 border-[#f4b925] rounded-r-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Info className="w-6 h-6 text-[#f4b925]" />
+                <h4 className="text-lg font-display font-bold text-white">Nota Importante para los Afiliados</h4>
+              </div>
+              <p className="text-white/70 text-sm font-serif leading-relaxed">
+                📌 <span className="font-bold text-white">Recuerda:</span> Todos los enlaces de afiliado se generan a través de ClickBank. Si aún no tienes cuenta, puedes <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="text-[#f4b925] underline hover:text-white transition-colors">crearla gratis aquí</a>. Una vez registrado, sustituye los enlaces de la tabla por tus propios "hoplinks" personalizados.
+              </p>
+            </div>
+            
+            <div className="bg-[#f4b925]/10 backdrop-blur-sm p-8 border-l-4 border-[#4db380] rounded-r-lg">
+              <div className="flex items-center gap-3 mb-4">
+                <Lightbulb className="w-6 h-6 text-[#4db380]" />
+                <h4 className="text-lg font-display font-bold text-white">💡 Estrategia recomendada</h4>
+              </div>
+              <div className="space-y-4 text-white/70 text-sm font-serif leading-relaxed">
+                <p>No promociones libros de forma aislada. Diseña un recorrido para tu audiencia. Por ejemplo:</p>
+                <ul className="space-y-3">
+                  <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-[#4db380] shrink-0" /> <span className="font-bold text-white">Atrae</span> con contenido sobre "cómo empezar un blog" (promociona <span className="italic">Cómo crear un Blog optimizado</span>).</li>
+                  <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-[#4db380] shrink-0" /> <span className="font-bold text-white">Profundiza</span> con estrategias de monetización (promociona <span className="italic">Dominando el marketing de afiliados</span>).</li>
+                  <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-[#4db380] shrink-0" /> <span className="font-bold text-white">Convierte</span> con el sistema completo (promociona <span className="italic">Experto en PLR Premium</span> al 75%).</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
