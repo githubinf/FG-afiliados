@@ -114,28 +114,26 @@ export default function App() {
                 <Zap className="w-3 h-3" /> Programa de Afiliados
               </div>
               <h1 className="text-3xl md:text-5xl font-display font-bold text-[#174532] leading-tight mb-8 tracking-tight">
-                Diseña ingresos recomendando <span className="italic text-[#4db380]">sistemas</span>, no productos.
+                Programa de Afiliados FG Perspectiva: Convierte Sistemas en Ingresos
               </h1>
-              <p className="text-lg md:text-xl text-[#1b1b1b]/70 mb-6 leading-relaxed font-serif">
-                No necesitamos más afiliados. Necesitamos personas que entiendan que FG Perspectiva no es una tienda. Es una arquitectura.
-              </p>
-              <p className="text-base md:text-lg text-[#174532] mb-10 font-serif italic border-l-4 border-[#f4b925] pl-6 py-2">
-                "No se trata de vender libros. Se trata de ayudar a otros a construir activos digitales reales."
+              <p className="text-lg md:text-xl text-[#1b1b1b]/70 mb-10 leading-relaxed font-serif">
+                No promociones productos aislados. Integra a tus usuarios en una arquitectura digital que les cambie la vida... y hazte con comisiones de hasta el 75%.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="#join" 
-                  onClick={(e) => scrollToSection(e, 'join')}
+                  href="https://www.clickbank.com/" 
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-[#174532] text-[#f4b925] px-10 py-5 font-bold text-sm flex items-center justify-center gap-3 hover:bg-[#1f513a] transition-all group uppercase tracking-[0.1em] shadow-lg"
                 >
-                  Unirse al Programa <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Unirme al Programa (ClickBank) <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a 
-                  href="#architecture" 
-                  onClick={(e) => scrollToSection(e, 'architecture')}
+                  href="#commissions" 
+                  onClick={(e) => scrollToSection(e, 'commissions')}
                   className="border-2 border-[#174532] text-[#174532] px-10 py-5 font-bold text-sm flex items-center justify-center gap-3 hover:bg-[#174532] hover:text-white transition-all uppercase tracking-[0.1em]"
                 >
-                  Ver arquitectura
+                  Explorar la Arquitectura de Comisiones
                 </a>
               </div>
             </motion.div>
@@ -150,19 +148,16 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <SectionTitle subtitle="La mayoría de los programas fallan porque se enfocan en el producto. Nosotros nos enfocamos en el sistema.">
-                🧠 Perspectiva antes que promoción
+              <SectionTitle subtitle="La mayoría de los programas de afiliados te enseñan a lanzar links. Nosotros te enseñamos a construir puentes.">
+                🏗️ No Buscamos Vendedores. Buscamos Arquitectos de Resultados.
               </SectionTitle>
               <div className="space-y-8 text-[#1b1b1b]/80 leading-relaxed text-xl font-serif">
                 <p>
-                  FG Perspectiva no es una tienda. Es una arquitectura. Este programa no está diseñado para quien busca promociones rápidas… sino para quien quiere construir un sistema de ingresos alineado con una visión profunda del marketing.
+                  Cuando promocionas FG Perspectiva, no estás vendiendo un ebook; estás guiando a alguien hacia la primera pieza de su propio sistema digital. Esto se traduce en mayor confianza, menos objeciones y conversiones más altas y sostenibles.
                 </p>
                 <div className="bg-[#dae7df]/50 p-10 border-l-4 border-[#f4b925] italic text-[#174532] font-bold">
-                  "Integra conocimiento dentro de una estructura que genere resultados sostenibles. Eso cambia todo."
+                  "Tu Contenido (Puente) → Libro (Entrada al Sistema) → Experto en PLR Premium (El Sistema Completo) → Cliente Fidelizado + Tu Comisión."
                 </div>
-                <p>
-                  Cuando alguien compra dentro del ecosistema FG Perspectiva, no está adquiriendo información aislada… Está entrando en un proceso. Y ahí es donde nace la verdadera conversión.
-                </p>
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -196,47 +191,67 @@ export default function App() {
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-4 tracking-tight leading-tight">
-              💸 Modelo de comisiones
+              💸 Modelo de Comisiones y Productos Estrella
             </h2>
             <p className="text-white/60 max-w-2xl text-base md:text-lg leading-relaxed font-serif italic">
-              Diseñado para escalar y alineado con resultados reales.
+              Claridad y Transparencia: Los enlaces son a través de ClickBank. Regístrate gratis y empieza a construir.
             </p>
             <div className="w-16 h-1 bg-[#f4b925] mt-6" />
           </div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
-            <div className="bg-white p-8 shadow-lg border border-[#174532]/5 relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-20 h-20 bg-[#f4b925] translate-x-10 -translate-y-10 rotate-45 group-hover:scale-110 transition-transform" />
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="px-2 py-0.5 bg-[#174532] text-[#f4b925] text-[9px] font-bold uppercase tracking-widest">Eje Central</div>
-                  <h3 className="text-xl font-display font-bold text-[#174532]">Experto en PLR Premium</h3>
-                </div>
-                <div className="text-5xl font-display font-bold text-[#174532] mb-6">75% <span className="text-xs text-[#1b1b1b]/40 font-sans font-normal uppercase tracking-[0.2em]">Comisión</span></div>
-                <ul className="space-y-3 text-[#1b1b1b]/70 mb-8 text-sm font-serif">
-                  <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-[#4db380] shrink-0" /> Eje central del ecosistema</li>
-                  <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-[#4db380] shrink-0" /> Punto donde todo converge</li>
-                  <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-[#4db380] shrink-0" /> Rol en tu estrategia: conversión principal</li>
-                </ul>
-                <p className="text-[9px] text-[#174532]/50 uppercase tracking-[0.2em] font-bold">Este producto no es un complemento. Es el sistema.</p>
-              </div>
-            </div>
-
-            <div className="bg-[#1f513a] p-8 border border-white/10 shadow-lg relative overflow-hidden">
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="px-2 py-0.5 bg-[#f4b925] text-[#174532] text-[9px] font-bold uppercase tracking-widest">Entrada</div>
-                  <h3 className="text-xl font-display font-bold text-white">Biblioteca FG Perspectiva</h3>
-                </div>
-                <div className="text-5xl font-display font-bold text-[#f4b925] mb-6">50% <span className="text-xs text-white/40 font-sans font-normal uppercase tracking-[0.2em]">Comisión</span></div>
-                <ul className="space-y-3 text-white/70 mb-8 text-sm font-serif">
-                  <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-[#4db380] shrink-0" /> Educación progresiva</li>
-                  <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-[#4db380] shrink-0" /> Generadores de confianza</li>
-                  <li className="flex gap-3"><CheckCircle2 className="w-4 h-4 text-[#4db380] shrink-0" /> No promociones productos. Diseña recorridos.</li>
-                </ul>
-                <p className="text-[9px] text-white/30 uppercase tracking-[0.2em] font-bold">Cada libro funciona como entrada al sistema.</p>
-              </div>
-            </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-left border-collapse bg-white/5 backdrop-blur-sm rounded-lg overflow-hidden">
+              <thead>
+                <tr className="bg-[#f4b925] text-[#174532]">
+                  <th className="p-4 font-display font-bold uppercase tracking-wider text-sm">Producto / Ruta</th>
+                  <th className="p-4 font-display font-bold uppercase tracking-wider text-sm">Comisión</th>
+                  <th className="p-4 font-display font-bold uppercase tracking-wider text-sm">Rol en la Arquitectura</th>
+                  <th className="p-4 font-display font-bold uppercase tracking-wider text-sm text-center">Enlace de Afiliado</th>
+                </tr>
+              </thead>
+              <tbody className="text-white/80">
+                <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                  <td className="p-4 font-bold">Eje Central: Experto en PLR Premium</td>
+                  <td className="p-4 text-[#f4b925] font-bold">75%</td>
+                  <td className="p-4 text-sm italic">El Sistema Final. Punto de convergencia de toda la arquitectura.</td>
+                  <td className="p-4 text-center">
+                    <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-[#f4b925] text-[#174532] px-4 py-2 rounded font-bold text-xs uppercase tracking-widest hover:bg-white transition-all">
+                      Obtener Enlace <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                  <td className="p-4">Ruta Fundamentos: Cómo crear un Blog optimizado</td>
+                  <td className="p-4 text-[#f4b925] font-bold">50%</td>
+                  <td className="p-4 text-sm italic">La entrada al sistema para quien empieza desde cero.</td>
+                  <td className="p-4 text-center">
+                    <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded font-bold text-xs uppercase tracking-widest hover:bg-[#f4b925] hover:text-[#174532] transition-all">
+                      Obtener Enlace <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                  <td className="p-4">Ruta Monetización: Dominando el marketing de afiliados</td>
+                  <td className="p-4 text-[#f4b925] font-bold">50%</td>
+                  <td className="p-4 text-sm italic">Activa el flujo de ingresos dentro del sistema.</td>
+                  <td className="p-4 text-center">
+                    <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded font-bold text-xs uppercase tracking-widest hover:bg-[#f4b925] hover:text-[#174532] transition-all">
+                      Obtener Enlace <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </td>
+                </tr>
+                <tr className="border-b border-white/10 hover:bg-white/5 transition-colors">
+                  <td className="p-4">Ruta Tecnología: Cómo ganar dinero con CHATGPT</td>
+                  <td className="p-4 text-[#f4b925] font-bold">50%</td>
+                  <td className="p-4 text-sm italic">Acelera la creación y automatización del sistema.</td>
+                  <td className="p-4 text-center">
+                    <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded font-bold text-xs uppercase tracking-widest hover:bg-[#f4b925] hover:text-[#174532] transition-all">
+                      Obtener Enlace <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -311,53 +326,85 @@ export default function App() {
         </div>
       </section>
 
+      {/* Resources Section */}
+      <section className="relative py-20 px-8 md:px-12 bg-[#dae7df]/30 scroll-mt-24" id="resources">
+        <div className="max-w-6xl mx-auto">
+          <SectionTitle subtitle="Inspirado en tu referencia. Aquí encontrarás todo lo necesario para promocionar con éxito.">
+            🛠️ Herramientas y Recursos para el Afiliado
+          </SectionTitle>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 shadow-md border-b-4 border-[#4db380] flex flex-col items-center text-center">
+              <MessageSquare className="w-10 h-10 text-[#174532] mb-4" />
+              <h3 className="text-lg font-display font-bold text-[#174532] mb-2">Kit de Copys</h3>
+              <p className="text-sm text-[#1b1b1b]/70 font-serif">Textos listos para usar en tus redes sociales y correos electrónicos.</p>
+              <span className="mt-4 text-[10px] uppercase tracking-widest font-bold text-[#4db380]">Próximamente</span>
+            </div>
+            <div className="bg-white p-8 shadow-md border-b-4 border-[#4db380] flex flex-col items-center text-center">
+              <Layers className="w-10 h-10 text-[#174532] mb-4" />
+              <h3 className="text-lg font-display font-bold text-[#174532] mb-2">Creativos Visuales</h3>
+              <p className="text-sm text-[#1b1b1b]/70 font-serif">Banners, imágenes y vídeos optimizados para conversión.</p>
+              <span className="mt-4 text-[10px] uppercase tracking-widest font-bold text-[#4db380]">Próximamente</span>
+            </div>
+            <div className="bg-white p-8 shadow-md border-b-4 border-[#4db380] flex flex-col items-center text-center">
+              <ExternalLink className="w-10 h-10 text-[#174532] mb-4" />
+              <h3 className="text-lg font-display font-bold text-[#174532] mb-2">Guías de Estrategia</h3>
+              <p className="text-sm text-[#1b1b1b]/70 font-serif">Aprende a construir puentes efectivos con nuestro contenido.</p>
+              <span className="mt-4 text-[10px] uppercase tracking-widest font-bold text-[#4db380]">Próximamente</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* How to Start */}
       <section className="relative py-20 px-8 md:px-12 scroll-mt-24" id="join">
         <div className="max-w-4xl mx-auto text-center">
-          <SectionTitle>🚀 Cómo empezar</SectionTitle>
+          <SectionTitle>🚀 ¿Cómo Empezar? (Pasos Simples)</SectionTitle>
           <div className="grid md:grid-cols-2 gap-8 text-left mb-16">
             {[
-              "Regístrate en ClickBank",
-              "Accede a los productos FG Perspectiva",
-              "Genera tus enlaces de afiliado",
-              "Construye contenido con intención"
-            ].map((text, i) => (
-              <div key={i} className="bg-white p-8 shadow-md border-t-4 border-[#174532] flex items-center gap-6 group hover:shadow-lg transition-all">
-                <div className="w-12 h-12 bg-[#174532] text-[#f4b925] flex items-center justify-center font-display font-bold text-xl group-hover:scale-110 transition-transform">{i + 1}</div>
-                <span className="font-display font-bold text-base text-[#174532]">{text}</span>
+              { title: "Regístrate en ClickBank", desc: "Si no tienes cuenta, créala gratis." },
+              { title: "Obtén tus Enlaces", desc: "Usa la tabla de arriba para obtener tus enlaces personalizados para todos los productos FG Perspectiva." },
+              { title: "Construye tu Contenido con Intención", desc: "Usa nuestros recursos para crear artículos, vídeos o emails que eduquen sobre 'construir activos digitales', no que solo 'vendan un libro'." },
+              { title: "Comienza a Ganar", desc: "Cada vez que alguien entre a nuestro ecosistema a través de tu enlace y compre, recibirás tu comisión." }
+            ].map((item, i) => (
+              <div key={i} className="bg-white p-8 shadow-md border-t-4 border-[#174532] flex flex-col gap-4 group hover:shadow-lg transition-all">
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 shrink-0 bg-[#174532] text-[#f4b925] flex items-center justify-center font-display font-bold text-lg group-hover:scale-110 transition-transform">{i + 1}</div>
+                  <span className="font-display font-bold text-base text-[#174532]">{item.title}</span>
+                </div>
+                <p className="text-sm text-[#1b1b1b]/70 font-serif leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-          <button className="bg-[#174532] text-[#f4b925] px-12 py-6 font-bold text-base hover:bg-[#1f513a] transition-all shadow-xl uppercase tracking-[0.2em]">
+          <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#174532] text-[#f4b925] px-12 py-6 font-bold text-base hover:bg-[#1f513a] transition-all shadow-xl uppercase tracking-[0.2em]">
             Registrarme en ClickBank
-          </button>
+          </a>
         </div>
       </section>
 
       {/* FAQ Section */}
       <section className="relative py-20 px-8 md:px-12 border-t border-[#174532]/5">
         <div className="max-w-3xl mx-auto">
-          <SectionTitle>❓ Preguntas frecuentes</SectionTitle>
+          <SectionTitle>❓ Preguntas Frecuentes (FAQ)</SectionTitle>
           <div className="space-y-2">
             <FAQItem 
-              question="¿Necesito experiencia previa?" 
-              answer="No. Pero entender el enfoque sistémico acelerará tus resultados. El programa está diseñado para guiarte en esa comprensión." 
+              question="¿Necesito experiencia previa en marketing de afiliados?" 
+              answer="No es obligatoria, pero valoramos la intención de aprender. Si entiendes la filosofía de construir sistemas, tendrás una gran ventaja." 
             />
             <FAQItem 
-              question="¿Puedo promocionar todos los productos?" 
-              answer="Sí. De hecho, el sistema está diseñado para que lo hagas. Cada producto cumple una función dentro del recorrido del cliente." 
+              question="¿Puedo promocionar todos los productos de la biblioteca?" 
+              answer="Sí. Puedes promocionar cualquier libro o el producto central 'Experto en PLR Premium'. La tabla superior tiene todos los enlaces." 
             />
             <FAQItem 
               question="¿Dónde recibo mis comisiones?" 
-              answer="Todas las comisiones se gestionan y pagan a través de ClickBank, garantizando transparencia y puntualidad." 
+              answer="Todas las comisiones son gestionadas y pagadas directamente por ClickBank." 
+            />
+            <FAQItem 
+              question="¿Hay un soporte para afiliados?" 
+              answer="¡Por supuesto! Puedes contactarnos en afiliados@fgperspectiva.com para cualquier duda o para recibir consejos de promoción." 
             />
             <FAQItem 
               question="¿Cuál es la mejor forma de empezar?" 
-              answer="Crear contenido que conecte problemas reales con soluciones estructuradas. No intentes vender, intenta guiar." 
-            />
-            <FAQItem 
-              question="¿Esto funciona a largo plazo?" 
-              answer="Sí. Porque no depende de tácticas pasajeras, sino de diseño arquitectónico y necesidades humanas reales." 
+              answer="Te recomendamos empezar por un nicho que domines (ej. blogging, IA, marketing de contenidos), usar los artículos que te proporcionamos en el kit, y promocionar los libros de esa ruta como la solución estructurada que tu audiencia necesita." 
             />
           </div>
         </div>
@@ -419,7 +466,7 @@ export default function App() {
               onClick={(e) => scrollToSection(e, 'philosophy')}
               className="hover:text-[#174532] transition-colors cursor-pointer py-2"
             >
-              Filosofía
+              Enfoque
             </a>
             <a 
               href="#commissions" 
@@ -429,11 +476,11 @@ export default function App() {
               Comisiones
             </a>
             <a 
-              href="#architecture" 
-              onClick={(e) => scrollToSection(e, 'architecture')}
+              href="#resources" 
+              onClick={(e) => scrollToSection(e, 'resources')}
               className="hover:text-[#174532] transition-colors cursor-pointer py-2"
             >
-              Arquitectura
+              Recursos
             </a>
           </div>
           <a 
