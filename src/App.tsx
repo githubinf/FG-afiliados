@@ -348,7 +348,11 @@ export default function App() {
               },
               { name: "El arte de atraer la abundancia", commission: "50%" },
               { name: "De la Pluma al Dinero", commission: "50%" },
-              { name: "Cómo crear Ebooks (de no ficción)", commission: "50%" },
+              { 
+                name: "Cómo crear Ebooks (de no ficción)", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp11"
+              },
               { name: "Ebook en 24 horas", commission: "50%" }
             ]}
           />
