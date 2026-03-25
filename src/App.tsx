@@ -353,7 +353,11 @@ export default function App() {
                 commission: "50%",
                 customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp11"
               },
-              { name: "Ebook en 24 horas", commission: "50%" }
+              { 
+                name: "Ebook en 24 horas", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp12"
+              }
             ]}
           />
 
