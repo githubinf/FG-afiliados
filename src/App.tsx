@@ -166,14 +166,6 @@ export default function App() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
-                  href="https://www.clickbank.com/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#174532] text-[#f4b925] px-10 py-5 font-bold text-sm flex items-center justify-center gap-3 hover:bg-[#1f513a] transition-all group uppercase tracking-[0.1em] shadow-lg"
-                >
-                  Unirme al Programa (ClickBank) <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
-                <a 
                   href="#commissions" 
                   onClick={(e) => scrollToSection(e, 'commissions')}
                   className="border-2 border-[#174532] text-[#174532] px-10 py-5 font-bold text-sm flex items-center justify-center gap-3 hover:bg-[#174532] hover:text-white transition-all uppercase tracking-[0.1em]"
@@ -494,10 +486,10 @@ export default function App() {
       </section>
 
       {/* How to Start */}
-      <section className="relative py-20 px-8 md:px-12 scroll-mt-24" id="join">
+      <section className="relative pt-20 pb-10 px-8 md:px-12 scroll-mt-24" id="join">
         <div className="max-w-4xl mx-auto text-center">
           <SectionTitle>🚀 ¿Cómo Empezar? (Pasos Simples)</SectionTitle>
-          <div className="grid md:grid-cols-2 gap-8 text-left mb-16">
+          <div className="grid md:grid-cols-2 gap-8 text-left">
             {[
               { title: "Regístrate en ClickBank", desc: "Si no tienes cuenta, créala gratis." },
               { title: "Obtén tus Enlaces", desc: "Usa la tabla de arriba para obtener tus enlaces personalizados para todos los productos FG Perspectiva." },
@@ -513,14 +505,11 @@ export default function App() {
               </div>
             ))}
           </div>
-          <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="inline-block bg-[#174532] text-[#f4b925] px-12 py-6 font-bold text-base hover:bg-[#1f513a] transition-all shadow-xl uppercase tracking-[0.2em]">
-            Registrarme en ClickBank
-          </a>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="relative py-20 px-8 md:px-12 border-t border-[#174532]/5">
+      <section className="relative pt-10 pb-20 px-8 md:px-12 border-t border-[#174532]/5">
         <div className="max-w-3xl mx-auto">
           <SectionTitle>❓ Preguntas Frecuentes (FAQ)</SectionTitle>
           <div className="space-y-2">
