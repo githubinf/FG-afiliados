@@ -252,7 +252,7 @@ export default function App() {
                 name: "Experto en PLR Premium", 
                 commission: "75%", 
                 role: "El Sistema Final. Punto de convergencia de toda la arquitectura. El producto que integra todo el conocimiento en un sistema completo.",
-                buttonText: "PRÓXIMAMENTE"
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis"
               }
             ]}
           />
@@ -274,7 +274,7 @@ export default function App() {
               { 
                 name: "Guía Completa de Inbound Marketing", 
                 commission: "50%",
-                buttonText: "PRÓXIMAMENTE"
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp13"
               }
             ]}
           />
@@ -370,6 +370,9 @@ export default function App() {
               </div>
               <p className="text-white/70 text-sm font-serif leading-relaxed">
                 📌 <span className="font-bold text-white">Recuerda:</span> Todos los enlaces de afiliado se generan a través de ClickBank. Si aún no tienes cuenta, puedes <a href="https://www.clickbank.com/" target="_blank" rel="noopener noreferrer" className="text-[#f4b925] underline hover:text-white transition-colors">crearla gratis aquí</a>. Una vez registrado, sustituye los enlaces de la tabla por tus propios "hoplinks" personalizados.
+              </p>
+              <p className="text-white/70 text-sm font-serif leading-relaxed mt-4">
+                Para recoger links personalizados entra en tu cuenta de Clickbank, ve al mercaplace, escribe "Experto en PLR", da clic en "Get affiliate link", selecciona la landing page de tu agrado.
               </p>
             </div>
             
@@ -535,7 +538,7 @@ export default function App() {
             />
             <FAQItem 
               question="¿Hay un soporte para afiliados?" 
-              answer="¡Por supuesto! Puedes contactarnos en afiliados@fgperspectiva.com para cualquier duda o para recibir consejos de promoción." 
+              answer="¡Por supuesto! Puedes contactarnos en <a href='mailto:afiliados@fgperspectiva.com' class='text-[#174532] font-bold underline hover:text-[#4db380] transition-colors'>afiliados@fgperspectiva.com</a> para cualquier duda o para recibir consejos de promoción." 
             />
             <FAQItem 
               question="¿Cuál es la mejor forma de empezar?" 
@@ -566,10 +569,9 @@ export default function App() {
             <div>
               <h4 className="text-white font-bold uppercase tracking-[0.2em] text-[10px] mb-6">Navegación</h4>
               <ul className="space-y-3 text-xs text-[#4db380] font-bold uppercase tracking-widest">
-                <li><a href="#" className="hover:text-white transition-colors">Biblioteca</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Sistemas</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Sobre nosotros</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
+                <li><a href="https://fgperspectiva.vercel.app/#biblioteca" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Biblioteca</a></li>
+                <li><a href="https://fgperspectiva.vercel.app/#sistemas" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sistemas</a></li>
+                <li><a href="https://despertarindomable.blogspot.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Blog</a></li>
               </ul>
             </div>
           </div>
@@ -623,7 +625,7 @@ export default function App() {
             onClick={(e) => scrollToSection(e, 'join')}
             className="bg-[#174532] text-[#f4b925] px-6 py-2.5 font-bold text-[10px] uppercase tracking-widest hover:bg-[#1f513a] transition-all shadow-md cursor-pointer"
           >
-            Unirse ahora
+            Empezar
           </a>
         </div>
       </nav>
