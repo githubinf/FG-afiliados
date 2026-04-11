@@ -84,9 +84,62 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
         className="overflow-hidden"
       >
         <div className="pb-6 text-[#1b1b1b]/70 leading-relaxed font-serif text-base md:text-lg">
-          {answer}
+          <div dangerouslySetInnerHTML={{ __html: answer }} />
         </div>
       </motion.div>
+    </div>
+  );
+};
+
+const RotatingBanner = () => {
+  const banners = [
+    {nombre:"Cómo crear un Blog optimizado", url:"https://i.ibb.co/q3TTrp45/1-como-crear-un-blog-optimizado-libro-400.jpg"},
+    {nombre:"Mi Blog y los Programas de Afiliados", url:"https://i.ibb.co/gFByygV3/4-mi-blog-y-los-programas-de-afiliados-libro-400.jpg"},
+    {nombre:"Guía Completa de Inbound Marketing", url:"https://i.ibb.co/FL81k56f/11-guia-inbound-marketing-libro-400.jpg"},
+    {nombre:"Dominando el marketing de afiliados", url:"https://i.ibb.co/848rmyCx/3-marketing-de-afiliados-libro-400.jpg"},
+    {nombre:"Marketing CPA Para Emprendedores y Profesionales Digitales", url:"https://i.ibb.co/dFbZCmH/21-marketing-cpa-libro-400-2.jpg"},
+    {nombre:"Cpa Marketing Fórmula Smartlink", url:"https://i.ibb.co/fV1pc13f/6-cpa-marketing-smartlink-libro-400.jpg"},
+    {nombre:"Dinero con Clickbank", url:"https://i.ibb.co/YBzVsvGZ/2-dinero-con-clickbank-libro-400.jpg"},
+    {nombre:"Tips de Marketing para Afiliados", url:"https://i.ibb.co/5hqN1ycg/5-tips-de-marketing-para-afiliados-libro-400.jpg"},
+    {nombre:"Cómo ganar dinero con CHATGPT", url:"https://i.ibb.co/s9kNwj06/12-dinero-con-chatgpt-libro-400.jpg"},
+    {nombre:"Desbloquea tu inspiración con ChatGPT", url:"https://i.ibb.co/qY3WJ4bN/16-chatgpt-para-escritores-libro-400.jpg"},
+    {nombre:"Inteligencia Artificial", url:"https://i.ibb.co/20gchR86/15-inteligencia-artificial-libro-400.jpg"},
+    {nombre:"El futuro del marketing (IA)", url:"https://i.ibb.co/Kx6WXKQ7/7-marketing-IA-futuro-libro-400.jpg"},
+    {nombre:"Ideas y consejos de Tráfico Web", url:"https://i.ibb.co/7dKDNLZG/13-ideas-y-consejos-de-trafico-web-libro-400.jpg"},
+    {nombre:"Ideas Maestras de Tráfico Web", url:"https://i.ibb.co/KjkrJZVk/27-ideas-maestras-de-trafico-web-libro-400.jpg"},
+    {nombre:"El Poder Del Marketing De Contenidos", url:"https://i.ibb.co/hJ7WccPy/18-marketing-de-contenidos-libro-400.jpg"},
+    {nombre:"Dominando el Arte del Email Marketing", url:"https://i.ibb.co/FbxVRfGY/26-dominando-el-arte-del-email-marketing-libro-400.jpg"},
+    {nombre:"El Vendedor hipnótico", url:"https://i.ibb.co/20bRD4Gt/8-el-vendedor-hypnotico-libro-400.jpg"},
+    {nombre:"El arte de atraer la abundancia", url:"https://i.ibb.co/8nLGZsX4/14-el-arte-de-atraer-la-abundancia-ebook-libro-400.jpg"},
+    {nombre:"De la Pluma al Dinero", url:"https://i.ibb.co/hFkMt4cm/23-de-la-pluma-al-dinero-libro-400.jpg"},
+    {nombre:"Cómo crear Ebooks", url:"https://i.ibb.co/MxcXwpc4/9-como-crear-ebooks-de-no-ficcion-libro-400.jpg"},
+    {nombre:"Ebook en 24 horas", url:"https://i.ibb.co/DH0zJcrp/10-ebook-en-24-horas-libro-400.jpg"},
+    {nombre:"Experto en PLR Premium", url:"https://i.ibb.co/QFGfhgGL/25-experto-en-plr-producto-400.jpg"},
+  ];
+
+  const [index, setIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % banners.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [banners.length]);
+
+  return (
+    <div className="banner-wrapper w-full max-w-[300px] md:max-w-[400px] mx-auto overflow-hidden rounded-xl shadow-2xl bg-white/10 backdrop-blur-sm p-2">
+      <div className="banner-container overflow-hidden rounded-lg">
+        <motion.img 
+          key={index}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          src={banners[index].url} 
+          alt={banners[index].nombre}
+          className="banner-image w-full h-auto block rounded-lg banner-zoom-animation"
+          referrerPolicy="no-referrer"
+        />
+      </div>
     </div>
   );
 };
@@ -149,7 +202,7 @@ export default function App() {
       {/* Hero Section */}
       <header className="relative pt-20 pb-24 px-8 md:px-12 bg-[#dae7df]/20 overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10">
-          <div className="max-w-2xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -173,6 +226,15 @@ export default function App() {
                   Explorar la Arquitectura de Comisiones
                 </a>
               </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex justify-center lg:justify-end"
+            >
+              <RotatingBanner />
             </motion.div>
           </div>
         </div>

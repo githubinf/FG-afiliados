@@ -15,6 +15,15 @@
   --color-brand-text: #1b1b1b; /* Main Text */
 }
 
+@keyframes banner-zoom {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.banner-zoom-animation {
+  animation: banner-zoom 4s infinite ease-in-out;
+}
+
 @layer base {
   body {
     @apply bg-white text-[#1b1b1b] selection:bg-[#4db380]/30;
