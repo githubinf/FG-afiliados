@@ -144,7 +144,7 @@ const RotatingBanner = () => {
   );
 };
 
-const ProductTable = ({ title, description, products, showRole = false }: { title: string, description?: string, products: { name: string, commission: string, role?: string, buttonText?: string, customLink?: string }[], showRole?: boolean }) => (
+const ProductTable = ({ title, description, products, showRole = false }: { title: string, description?: string, products: { name: string, commission: string, role?: string, buttonText?: string, customLink?: string, isFeatured?: boolean }[], showRole?: boolean }) => (
   <div className="mb-16">
     <div className="flex items-center gap-3 mb-4">
       <h3 className="text-xl md:text-2xl font-display font-bold text-[#f4b925]">{title}</h3>
@@ -162,13 +162,13 @@ const ProductTable = ({ title, description, products, showRole = false }: { titl
         </thead>
         <tbody className="text-white/80">
           {products.map((p, i) => (
-            <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
-              <td className="p-4 text-sm font-bold">{p.name}</td>
-              <td className="p-4 text-[#f4b925] font-bold text-sm">{p.commission}</td>
+            <tr key={i} className={`border-b border-white/5 transition-colors ${p.isFeatured ? 'bg-[#f4b925]/20 hover:bg-[#f4b925]/30' : 'hover:bg-white/5'}`}>
+              <td className={`p-4 font-bold ${p.isFeatured ? 'text-lg md:text-xl text-[#f4b925]' : 'text-sm'}`}>{p.name}</td>
+              <td className={`p-4 font-bold ${p.isFeatured ? 'text-lg md:text-xl text-white' : 'text-[#f4b925] text-sm'}`}>{p.commission}</td>
               <td className="p-4 text-center">
                 {p.customLink ? (
                   <div className="flex flex-col items-center">
-                    <div className="bg-white/10 p-2 rounded text-sm text-white/50 break-all font-mono border border-white/5 select-all max-w-[300px] mx-auto">
+                    <div className={`p-2 rounded break-all font-mono border select-all max-w-[300px] mx-auto ${p.isFeatured ? 'bg-white/20 text-white border-white/20 text-base' : 'bg-white/10 text-white/50 border-white/5 text-sm'}`}>
                       {p.customLink}
                     </div>
                   </div>
@@ -178,7 +178,7 @@ const ProductTable = ({ title, description, products, showRole = false }: { titl
                   </div>
                 )}
               </td>
-              {showRole && <td className="p-4 text-xs italic opacity-80 leading-relaxed">{p.role}</td>}
+              {showRole && <td className={`p-4 italic opacity-80 leading-relaxed ${p.isFeatured ? 'text-sm md:text-base' : 'text-xs'}`}>{p.role}</td>}
             </tr>
           ))}
         </tbody>
@@ -306,7 +306,8 @@ export default function App() {
                 name: "Experto en PLR Premium", 
                 commission: "75%", 
                 role: "El Sistema Final. Punto de convergencia de toda la arquitectura. El producto que integra todo el conocimiento en un sistema completo.",
-                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis"
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis",
+                isFeatured: true
               }
             ]}
           />
