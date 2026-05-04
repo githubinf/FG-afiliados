@@ -370,7 +370,11 @@ export default function App() {
             title="🤖 Ruta Inteligencia Artificial Aplicada (Tecnología)"
             description="Cómo integrar IA en tus procesos digitales para crear más rápido y escalar."
             products={[
-              { name: "Cómo ganar dinero con CHATGPT", commission: "50%" },
+              { 
+                name: "Cómo ganar dinero con CHATGPT", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp14"
+              },
               { name: "Desbloquea tu inspiración con ChatGPT", commission: "50%" },
               { name: "Inteligencia Artificial", commission: "50%" },
               { 
