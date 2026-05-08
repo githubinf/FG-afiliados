@@ -389,7 +389,11 @@ export default function App() {
             title="🚀 Ruta Tráfico, Contenidos y Crecimiento (Crecimiento)"
             description="Métodos probados para atraer visitantes cualificados y convertir contenido en crecimiento constante."
             products={[
-              { name: "Ideas y consejos de Tráfico Web", commission: "50%" },
+              { 
+                name: "Ideas y consejos de Tráfico Web", 
+                commission: "50%",
+                customLink: "https://hop.clickbank.net/?affiliate=XXXXX&vendor=fcofrancis&cbpage=lp15"
+              },
               { name: "Ideas Maestras de Tráfico Web", commission: "50%" },
               { name: "El Poder Del Marketing De Contenidos", commission: "50%" },
               { name: "Dominando el Arte del Email Marketing", commission: "50%" }
